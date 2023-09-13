@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -36,5 +37,12 @@ public ResponseEntity<String> deleteData(@PathVariable int id)
 {
 	hs.deleteData(id);
 	return new ResponseEntity<String>("deleted", HttpStatus.OK);
+}
+@PutMapping("/update")
+public ResponseEntity<Student> updateData(@RequestBody Student s1){
+	
+	Student s=hs.m1(s1);
+	
+	return new ResponseEntity<Student>(s,HttpStatus.OK);
 }
 }
