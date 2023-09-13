@@ -9,4 +9,6 @@ public interface HomeService {
 
 	public List<Student> getalldata();
 
+	public void deleteData(int id);
+
 }

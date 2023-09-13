@@ -25,5 +25,10 @@ HomeRepository hr;
 		
 		return hr.findAll();
 	}
+	@Override
+	public void deleteData(int id)
+	{
+		 hr.deleteById(id);
+	}
 
 }
